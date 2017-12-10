@@ -1,50 +1,43 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-      <br>
-      <li><a href="http://vuejs-templates.github.io/webpack/" target="_blank">Docs for This Template</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
+  <div>
+    <group>
+      <cell is-link title="Simple" link="/component/tabbar-simple"></cell>
+      <cell is-link title="Switch icons" link="/component/tabbar-icon"></cell>
+    </group>
+    <tabbar>
+      <tabbar-item>
+        <i slot="icon" class="fa fa-compass" aria-hidden="true"></i>
+        <span slot="label">发现</span>
+      </tabbar-item>
+      <tabbar-item>
+        <i slot="icon" class="fa fa-book" aria-hidden="true"></i>
+        <span slot="label">菜谱</span>
+      </tabbar-item>
+      <tabbar-item selected link="/component/demo">
+        <i slot="icon" class="fa fa-leaf" aria-hidden="true"></i>
+        <span slot="label">菜场</span>
+      </tabbar-item>
+      <tabbar-item badge="2">
+        <i slot="icon" class="fa fa-shopping-basket" aria-hidden="true"></i>
+        <span slot="label">菜篮</span>
+      </tabbar-item>
+      <tabbar-item>
+        <i slot="icon" class="fa fa-user" aria-hidden="true"></i>
+        <span slot="label">我的</span>
+      </tabbar-item>
+    </tabbar>
   </div>
 </template>
 
 <script>
+import { Tabbar, TabbarItem, Group, Cell } from 'vux'
+
 export default {
-  name: 'HelloWorld',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
+  components: {
+    Tabbar,
+    TabbarItem,
+    Group,
+    Cell
   }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>

@@ -1,17 +1,20 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
     <router-view/>
   </div>
 </template>
 
 <script>
+import '@/assets/css/font-awesome.css'
+
 export default {
   name: 'app'
 }
 </script>
 
-<style>
+<style lang="less">
+@import '~vux/src/styles/reset.less';
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
